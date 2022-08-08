@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bars/bar-detail.css' %}"
+/>
+{% endblock %}
+
+{% block content %}
+
+<section class="bar-container">
+  <div>
+    <img src="" alt="">
+  </div>
+  <div>
+    <h1>{{ bar.name }}</h1>
+    <h2>{{ bar.description }} located in {{ bar.area }}</h2>
+  </div>
+</section>
+
+{% endblock %}

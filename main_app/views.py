@@ -25,3 +25,7 @@ def about(request):
 def bars_index(request):
   bars = Bar.objects.all()
   return render(request, 'bars/index.html', { 'bars': bars })
+
+def bars_detail(request, bar_id):
+  bar = Bar.objects.get(id=bar_id)
+  return render(request, 'bars/detail.html', { 'bar': bar })

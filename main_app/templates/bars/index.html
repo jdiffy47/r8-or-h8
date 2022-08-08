@@ -16,13 +16,15 @@
 <section>
   {% for bar in bars %}
   <div class="card">
-    <div class="card-content">
-      <div class="card-img-container">
-        <img src="" alt="">
+    <a href="/bars/{{ bar.id }}">
+      <div class="card-content">
+        <div class="card-img-container">
+          <img src="" alt="">
+        </div>
+        <h2>{{ bar.name }}</h2>
+        <p>{{ bar.description }} located in {{ bar.area }}.</p>
       </div>
-      <h2>{{ bar.name }}</h2>
-      <p>{{ bar.description }} located in {{ bar.area }}.</p>
-    </div>
+    </a>
   </div>
   {% endfor %}
 </section>
