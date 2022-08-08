@@ -6,9 +6,12 @@
 {% endblock %}
 
 {% block content %}
-
 <div>
-  <h1>Add a Bar</h1>
+  {% if bar %}
+    <h1>Edit {{ bar.name }}</h1>
+  {% else %}
+    <h1>Add a Bar</h1>
+  {% endif %}
 </div>
 <form action="" method="post" class="form-container">
   {% csrf_token %}

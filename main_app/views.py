@@ -25,7 +25,7 @@ class BarCreate(CreateView):
 
 class BarUpdate(UpdateView):
   model = Bar
-  fields = ['name', 'area', 'location']
+  fields = ['name', 'area', 'description']
 
 class BarDelete(DeleteView):
   model = Bar
