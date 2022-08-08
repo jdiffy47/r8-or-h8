@@ -16,7 +16,7 @@
 <section>
   {% for bar in bars %}
   <div class="card">
-    <a href="/bars/{{ bar.id }}">
+    <a href="{% url 'bars_detail' bar.id %}">
       <div class="card-content">
         <div class="card-img-container">
           <img src="" alt="">

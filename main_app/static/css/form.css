@@ -1,0 +1,20 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+table {
+  padding: 0 40px;
+  width: 100%;
+}
+
+
+td {
+  max-width: 60%;
+}
+
+button {
+  align-self: flex-end;
+  margin-right: 40px;
+}
