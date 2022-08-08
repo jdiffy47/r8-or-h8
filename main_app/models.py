@@ -1,6 +1,15 @@
 from django.db import models
 from django.urls import reverse
 
+
+
+RATES = (
+  ('1', '⭐'),
+  ('2', '⭐⭐'),
+  ('3', '⭐⭐⭐'),
+  ('4', '⭐⭐⭐⭐'),
+  ('5', '⭐⭐⭐⭐⭐'),
+)
 # Create your models here.
 class Bar(models.Model):
   name = models.CharField(max_length=100)
@@ -12,3 +21,16 @@ class Bar(models.Model):
 
   def get_absolute_url(self):
     return reverse('bars_detail', kwargs={'bar_id': self.id})
+
+class Rating(models.Model):
+  date = models.DateField('Rating date')
+  rate = models.CharField(max_length=1, choices=RATES, default=RATES[0][0])
+  description = models.TextField(max_length=250)
+
+  bar = models.ForeignKey(Bar, on_delete=models.CASCADE)
+
+  def __str__(self):
+    return f"{self.get_rate_display()} on {self.date}"
+
+  def __str__(self):
+    return self.description

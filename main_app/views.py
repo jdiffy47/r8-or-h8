@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Bar
+from .forms import RatingForm
 
 
 
@@ -16,7 +17,8 @@ def bars_index(request):
 
 def bars_detail(request, bar_id):
   bar = Bar.objects.get(id=bar_id)
-  return render(request, 'bars/detail.html', { 'bar': bar })
+  rating_form = RatingForm()
+  return render(request, 'bars/detail.html', { 'bar': bar, 'rating_form': rating_form })
 
 class BarCreate(CreateView):
   model = Bar
