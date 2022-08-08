@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block content %}
+
+<section>
+  <h1>Bar List</h1>
+</section>
+
+<section>
+  {% for bar in bars %}
+    <h2>{{ bar.name }}</h2>
+    <p>{{ bar.description }} located in {{ bar.area }}.</p>
+  {% endfor %}
+</section>
+
+{% endblock %}
