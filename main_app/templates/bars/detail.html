@@ -15,6 +15,10 @@
   <div>
     <h1>{{ bar.name }}</h1>
     <h2>{{ bar.description }} located in {{ bar.area }}</h2>
+    <div>
+      <a href="{% url 'bars_update' bar.id %}">Edit</a>
+      <a href="{% url 'bars_delete' bar.id %}">Delete</a>
+    </div>
   </div>
 </section>
 

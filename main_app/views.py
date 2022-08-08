@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Bar
 
 
@@ -21,3 +21,12 @@ def bars_detail(request, bar_id):
 class BarCreate(CreateView):
   model = Bar
   fields = '__all__'
+  success_url = '/bars/'
+
+class BarUpdate(UpdateView):
+  model = Bar
+  fields = ['name', 'area', 'location']
+
+class BarDelete(DeleteView):
+  model = Bar
+  success_url = '/bars/'
