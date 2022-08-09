@@ -7,7 +7,7 @@ from django.contrib.auth.views import LoginView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class Home(LoginView):
   template_name = 'home.html'
@@ -15,10 +15,12 @@ class Home(LoginView):
 def about(request):
   return render(request, 'about.html')
 
+@login_required
 def bars_index(request):
   bars = Bar.objects.all()
   return render(request, 'bars/index.html', { 'bars': bars })
 
+@login_required
 def bars_detail(request, bar_id):
   bar = Bar.objects.get(id=bar_id)
   beverages_bar_doesnt_have = Beverage.objects.exclude(id__in = bar.beverages.all().values_list('id'))
@@ -33,6 +35,7 @@ def add_rating(request, bar_id):
     new_rating.save()
   return redirect('bars_detail', bar_id=bar_id)
 
+@login_required
 def assoc_beverage(request, bar_id, beverage_id):
   Bar.objects.get(id=bar_id).beverages.add(beverage_id)
   return redirect('bars_detail', bar_id=bar_id)
@@ -52,7 +55,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message}
   return render(request, 'signup.html', context)
 
-class BarCreate(CreateView):
+class BarCreate(LoginRequiredMixin, CreateView):
   model = Bar
   fields = ['name', 'area', 'description']
   success_url = '/bars/'
@@ -61,29 +64,29 @@ class BarCreate(CreateView):
     form.instance.user = self.request.user
     return super().form_valid(form)
 
-class BarUpdate(UpdateView):
+class BarUpdate(LoginRequiredMixin, UpdateView):
   model = Bar
   fields = ['name', 'area', 'description']
 
-class BarDelete(DeleteView):
+class BarDelete(LoginRequiredMixin, DeleteView):
   model = Bar
   success_url = '/bars/'
   fields = ['name', 'area', 'description']
 
-class BeverageCreate(CreateView):
+class BeverageCreate(LoginRequiredMixin, CreateView):
   model = Beverage
   fields = '__all__'
 
-class BeverageList(ListView):
+class BeverageList(LoginRequiredMixin, ListView):
   model = Beverage
 
-class BeverageDetail(DetailView):
+class BeverageDetail(LoginRequiredMixin, DetailView):
   model = Beverage
 
-class BeverageUpdate(UpdateView):
+class BeverageUpdate(LoginRequiredMixin, UpdateView):
   model = Beverage
   fields = ['name', 'dankness']
 
-class BeverageDelete(DeleteView):
+class BeverageDelete(LoginRequiredMixin, DeleteView):
   model = Beverage
   success_url = '/beverages/'
