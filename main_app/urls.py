@@ -16,5 +16,5 @@ urlpatterns = [
   path('beverages/', views.BeverageList.as_view(), name='beverages_index'),
   path('beverages/<int:pk>/update/', views.BeverageUpdate.as_view(), name='beverages_update'),
   path('beverages/<int:pk>/delete/', views.BeverageDelete.as_view(), name='beverages_delete'),
-  
+  path('accounts/signup/', views.signup, name='signup')
 ]

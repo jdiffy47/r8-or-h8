@@ -4,7 +4,9 @@ from .models import Bar, Beverage
 from .forms import RatingForm
 from django.views.generic import ListView, DetailView
 from django.contrib.auth.views import LoginView
-
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
 
 
 class Home(LoginView):
@@ -35,10 +37,29 @@ def assoc_beverage(request, bar_id, beverage_id):
   Bar.objects.get(id=bar_id).beverages.add(beverage_id)
   return redirect('bars_detail', bar_id=bar_id)
 
+
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('bars_index')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'signup.html', context)
+
 class BarCreate(CreateView):
   model = Bar
-  fields = '__all__'
+  fields = ['name', 'area', 'description']
   success_url = '/bars/'
+
+  def form_valid(self, form):
+    form.instance.user = self.request.user
+    return super().form_valid(form)
 
 class BarUpdate(UpdateView):
   model = Bar
