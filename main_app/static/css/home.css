@@ -1,4 +1,33 @@
-.logo-img {
-  height: 100px;
-  width: 100px;
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+main > section {
+  width: 50%;
+  margin-right: 10px;
+  background-color: #00f5d4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.login > h1 {
+  margin: 0;
+}
+
+.title-container {
+  margin-top: 50px;
 }
