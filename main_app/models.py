@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-
+from datetime import date
 
 
 RATES = (
@@ -22,6 +22,7 @@ class Bar(models.Model):
   def get_absolute_url(self):
     return reverse('bars_detail', kwargs={'bar_id': self.id})
 
+
 class Rating(models.Model):
   date = models.DateField('Rating date')
   rate = models.CharField(max_length=1, choices=RATES, default=RATES[0][0])
@@ -34,3 +35,21 @@ class Rating(models.Model):
 
   def __str__(self):
     return self.description
+
+class Meta:
+  ordering = ['-date']
+
+class Beverage(models.Model):
+  name = models.CharField(max_length=50)
+  dankness = models.CharField(max_length=1, choices=RATES, default=RATES[0][0])
+
+  def __str__(self):
+    return self.name
+
+  def __str__(self):
+    return f"{self.get_rate_display()} on {self.name}"
+
+  def get_absolute_url(self):
+    return reverse("beverages_detail", kwargs={"pk": self.id})
+    
+    

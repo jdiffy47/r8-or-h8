@@ -43,6 +43,7 @@
       <button type="submit">Add Rating</button>
     </form>
     <h3>Previous Ratings</h3>
+    {% if bar.rating_set.all.count %}
     <table>
       <thead>
         <tr><th>Date</th><th>Rate</th><th>Description</th></tr>
@@ -57,6 +58,11 @@
         {% endfor %}
       </tbody>
     </table>
+    {% else %}
+      <div>
+        <p>{{ bar.name }} has not been reviewed yet. Be the first!</p>
+      </div>
+    {% endif %}
   </section>
 </div>
 

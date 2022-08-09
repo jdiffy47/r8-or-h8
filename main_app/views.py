@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Bar
+from .models import Bar, Beverage
 from .forms import RatingForm
 
 
@@ -40,3 +40,7 @@ class BarUpdate(UpdateView):
 class BarDelete(DeleteView):
   model = Bar
   success_url = '/bars/'
+
+class BeverageCreate(CreateView):
+  model = Beverage
+  fields = '__all__'
