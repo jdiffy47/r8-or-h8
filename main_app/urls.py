@@ -10,5 +10,9 @@ urlpatterns = [
   path('bars/<int:pk>/update', views.BarUpdate.as_view(), name='bars_update'),
   path('bars/<int:pk>/delete', views.BarDelete.as_view(), name='bars_delete'),
   path('bars/<int:bar_id>/add_rating/', views.add_rating, name='add_rating'),
-  path('beverages/create/', views.BeverageCreate.as_view(), name='beverages_create')
+  path('beverages/create/', views.BeverageCreate.as_view(), name='beverages_create'),
+  path('beverages/<int:pk>/', views.BeverageDetail.as_view(), name='beverages_detail'),
+  path('beverages/', views.BeverageList.as_view(), name='beverages_index'),
+  path('beverages/<int:pk>/update/', views.BeverageUpdate.as_view(), name='beverages_update'),
+  path('beverages/<int:pk>/delete/', views.BeverageDelete.as_view(), name='beverages_delete'),
 ]

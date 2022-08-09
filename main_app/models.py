@@ -39,17 +39,13 @@ class Rating(models.Model):
 class Meta:
   ordering = ['-date']
 
+# Add the Toy model
 class Beverage(models.Model):
   name = models.CharField(max_length=50)
-  dankness = models.CharField(max_length=1, choices=RATES, default=RATES[0][0])
+  dankness = models.CharField(max_length=50)
 
   def __str__(self):
     return self.name
 
-  def __str__(self):
-    return f"{self.get_rate_display()} on {self.name}"
-
   def get_absolute_url(self):
-    return reverse("beverages_detail", kwargs={"pk": self.id})
-    
-    
+    return reverse('beverages_detail', kwargs={'pk': self.id})

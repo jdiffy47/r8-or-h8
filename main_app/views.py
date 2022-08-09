@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Bar, Beverage
 from .forms import RatingForm
+from django.views.generic import ListView, DetailView
 
 
 
@@ -44,3 +45,17 @@ class BarDelete(DeleteView):
 class BeverageCreate(CreateView):
   model = Beverage
   fields = '__all__'
+
+class BeverageList(ListView):
+  model = Beverage
+
+class BeverageDetail(DetailView):
+  model = Beverage
+
+class BeverageUpdate(UpdateView):
+  model = Beverage
+  fields = ['name', 'dankness']
+
+class BeverageDelete(DeleteView):
+  model = Beverage
+  success_url = '/beverages/'
