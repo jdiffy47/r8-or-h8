@@ -18,8 +18,9 @@ def bars_index(request):
 
 def bars_detail(request, bar_id):
   bar = Bar.objects.get(id=bar_id)
+  beverages_bar_doesnt_have = Beverage.objects.exclude(id__in = bar.beverages.all().values_list('id'))
   rating_form = RatingForm()
-  return render(request, 'bars/detail.html', { 'bar': bar, 'rating_form': rating_form })
+  return render(request, 'bars/detail.html', { 'bar': bar, 'rating_form': rating_form, 'beverages': beverages_bar_doesnt_have })
 
 def add_rating(request, bar_id):
   form = RatingForm(request.POST)
@@ -27,6 +28,10 @@ def add_rating(request, bar_id):
     new_rating = form.save(commit=False)
     new_rating.bar_id = bar_id
     new_rating.save()
+  return redirect('bars_detail', bar_id=bar_id)
+
+def assoc_beverage(request, bar_id, beverage_id):
+  Bar.objects.get(id=bar_id).beverages.add(beverage_id)
   return redirect('bars_detail', bar_id=bar_id)
 
 class BarCreate(CreateView):

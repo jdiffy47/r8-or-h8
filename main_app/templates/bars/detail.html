@@ -80,12 +80,28 @@
           </div>
         {% endfor %}
       {% else %}
-          <p>{{beverage.name}} has had any dank beverages added yet</p>
+          <p>{{beverage.name}} has not had any dank beverages added yet</p>
       {% endif %}
     </div>
     <h3>Available Beverages</h3>
     <div>
-      
+      {% if beverages.count %}
+        {% for beverage in beverages.all %}
+          <div>
+            <a href="{% url 'beverages_detail' beverage.id %}">
+              <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
+            </a>
+            <form action="{% url 'assoc_beverage' bar.id beverage.id %}" method="post">
+              {% csrf_token %}
+              <button type="submit">Give Beverage</button>
+            </form>
+          </div>
+        {% endfor %}
+      {% else %}
+          <p>
+            {{bar.name}} has all the avaiable beverages. Maybe add more?
+          </p>
+        {% endif %}
     </div>
   </section>
 </div>
