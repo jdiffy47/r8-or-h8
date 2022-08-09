@@ -64,6 +64,30 @@
       </div>
     {% endif %}
   </section>
+  <section>
+    <div>
+      <h2>Best Beverages</h2>
+      <img src="" alt="">
+    </div>
+    <h3>{{ bar.name }}'s Best Beverages</h3>
+    <div>
+      {% if bar.beverages.count %}
+        {% for beverage in bar.beverages.all %}
+          <div>
+            <a href="{% url 'beverages_detail' beverage.id %}">
+              <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
+            </a>
+          </div>
+        {% endfor %}
+      {% else %}
+          <p>{{beverage.name}} has had any dank beverages added yet</p>
+      {% endif %}
+    </div>
+    <h3>Available Beverages</h3>
+    <div>
+      
+    </div>
+  </section>
 </div>
 
 {% endblock %}

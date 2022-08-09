@@ -41,6 +41,7 @@ class BarUpdate(UpdateView):
 class BarDelete(DeleteView):
   model = Bar
   success_url = '/bars/'
+  fields = ['name', 'area', 'description']
 
 class BeverageCreate(CreateView):
   model = Beverage
