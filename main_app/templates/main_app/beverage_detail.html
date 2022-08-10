@@ -10,15 +10,10 @@
 {% endblock %}
 
 {% block content %}
-  
-<div>
-  <div></div>
-  <div>
-    <h2>{{ beverage.name }}</h2>
-    <p>A {{ beverage.dankness }} beverage</p>
-  </div>
+<div class="bev-details-container">
+  <h2>{{ beverage.name }}</h2>
+  <p>A {{ beverage.dankness }} beverage</p>
+  <a href="{% url 'beverages_update' beverage.id %}">Edit</a>
+  <a href="{% url 'beverages_delete' beverage.id %}">Delete</a>
 </div>
-<a href="{% url 'beverages_update' beverage.id %}">Edit</a>
-<a href="{% url 'beverages_delete' beverage.id %}">Delete</a>
-
 {% endblock %}
