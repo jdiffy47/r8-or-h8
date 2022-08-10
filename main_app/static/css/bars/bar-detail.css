@@ -1,48 +1,46 @@
 
 .detail-pg-container {
-  /* display: flex; */
-  /* flex-direction: column wrap; */
-  /* flex-flow: row wrap; */
-  text-align: center;
-  /* flex: 1 1 auto; */
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.detail-pg-container > * {
-  padding: 10px;
-  margin: 10px;
-  /* flex: 1 100%; */
-  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
 .bar-details {
   background: #00bbf9;
-  /* position: absolute;
-  top: 95px;
-  width: 50%; */
-  /* opacity: 0.5; */
-}
-
-.rating-bev-container {
-  /* background: gold; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ratings-container {
-  background: #9b5de5;
-  padding: 20px;
-}
-
-.bar-beverages {
-  background: #fee440;
+  text-align: center;
+  color: #fff;
   padding: 10px;
 }
 
+.bar-details > a {
+  text-decoration: none;
+  color: #fff;
+  margin: 3px;
+}
 
+.ratings-container {
+  padding: 10px;
+  text-align: center;
+  flex: 1 1 50%;
+}
+
+
+.ratings-bev-container {
+  background: #9b5de5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bev-container {
+  padding: 10px;
+  flex: 1 1 50%;
+  text-align: center;
+}
+
+.bev-container > a {
+  text-decoration: none;
+}
 
 h2, h3, p, th, td, a {
   font-size: large;
