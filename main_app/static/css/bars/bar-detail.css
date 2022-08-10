@@ -1,7 +1,48 @@
-.bar-container {
-  padding: 35px 30px;
-  display: flex;
-  flex-direction: column;
+
+.detail-pg-container {
+  /* display: flex; */
+  /* flex-direction: column wrap; */
+  /* flex-flow: row wrap; */
+  text-align: center;
+  /* flex: 1 1 auto; */
   align-items: center;
+  flex-direction: row;
   justify-content: center;
+}
+
+.detail-pg-container > * {
+  padding: 10px;
+  margin: 10px;
+  /* flex: 1 100%; */
+  border-radius: 10px;
+}
+
+.bar-details {
+  background: deepskyblue;
+  /* position: absolute;
+  top: 95px;
+  width: 50%; */
+  /* opacity: 0.5; */
+}
+
+.rating-bev-container {
+  /* background: gold; */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ratings-container {
+  border-right: solid red 10px;
+  background: blue;
+  padding: 10px;
+}
+
+.bar-beverages {
+  background: hotpink;
+}
+
+
+h2, h3, p, th, td, a {
+  font-size: large;
 }

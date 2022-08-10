@@ -18,11 +18,10 @@
 </head>
 <body>
   <nav>
-    <div class="logo-container">
-      <a href="/">
-        <img class="logo-img" src="{% static 'images/beerinniceglass.svg' %}" alt="A beer in a nice glass">
-      </a>
-    </div>
+    <a href="/">
+      <img class="logo-img" src="{% static 'images/beerinniceglass.svg' %}" alt="A beer in a nice glass">
+    </a>
+    <h1 class="title">R8 or H8</h1>
     <ul>
       {% if user.is_authenticated %}
         <li><a href="{% url 'bars_index' %}">All Bars</a></li>

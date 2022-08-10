@@ -18,92 +18,84 @@
 
 {% block content %}
 
-<section class="bar-container">
-  <div>
-    <img src="" alt="">
-  </div>
-  <div>
+<div class="detail-pg-container">
+  <section class="bar-details">
     <h1>{{ bar.name }}</h1>
     <h2>{{ bar.description }} located in {{ bar.area }}</h2>
-    <div>
       <a href="{% url 'bars_update' bar.id %}">Edit</a>
       <a href="{% url 'bars_delete' bar.id %}">Delete</a>
-    </div>
-  </div>
-</section>
-<div>
-  <section>
-    <div>
+  </section>
+
+<div class="rating-bev-container">
+  <section class="ratings-container">
+    <div class="section-title">
       <h2>Ratings</h2>
     </div>
     <h3>Add a Rating</h3>
-    <form action="{% url 'add_rating' bar.id %}" method="post">
+    <form action="{% url 'add_rating' bar.id %}" method="post" class="section-body">
       {% csrf_token %}
       {{ rating_form.as_p }}
       <button type="submit">Add Rating</button>
     </form>
     <h3>Previous Ratings</h3>
     {% if bar.rating_set.all.count %}
-    <table>
-      <thead>
-        <tr><th>Date</th><th>Rate</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        {% for rating in bar.rating_set.all %}
-          <tr>
-            <td>{{rating.date}}</td>
-            <td>{{rating.get_rate_display}}</td>
-            <td>{{rating.description}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Rate</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+          {% for rating in bar.rating_set.all %}
+            <tr>
+              <td>{{rating.date}}</td>
+              <td>{{rating.get_rate_display}}</td>
+              <td>{{rating.description}}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     {% else %}
-      <div>
+      <div class="section-body">
         <p>{{ bar.name }} has not been reviewed yet. Be the first!</p>
       </div>
     {% endif %}
   </section>
-  <section>
-    <div>
+  <section class="bar-beverages">
+    <div class="section-title">
       <h2>Best Beverages</h2>
-      <img src="" alt="">
     </div>
     <h3>{{ bar.name }}'s Best Beverages</h3>
-    <div>
+    <div class="section-body">
       {% if bar.beverages.count %}
         {% for beverage in bar.beverages.all %}
-          <div>
+          <div class="beverage-container">
             <a href="{% url 'beverages_detail' beverage.id %}">
               <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
             </a>
           </div>
         {% endfor %}
       {% else %}
-          <p>{{beverage.name}} has not had any dank beverages added yet</p>
+        <p>{{beverage.name}} has not had any dank beverages added yet</p>
       {% endif %}
-    </div>
+    </div>  
     <h3>Available Beverages</h3>
-    <div>
+    <div class="section-body">
       {% if beverages.count %}
         {% for beverage in beverages.all %}
-          <div>
+          <div class="beverage-container">
             <a href="{% url 'beverages_detail' beverage.id %}">
               <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
             </a>
-            <form action="{% url 'assoc_beverage' bar.id beverage.id %}" method="post">
+              <form action="{% url 'assoc_beverage' bar.id beverage.id %}" method="post">
               {% csrf_token %}
               <button type="submit">Give Beverage</button>
             </form>
           </div>
         {% endfor %}
       {% else %}
-          <p>
-            {{bar.name}} has all the avaiable beverages. Maybe add more?
-          </p>
-        {% endif %}
-    </div>
+          <p>{{bar.name}} has all the avaiable beverages. Maybe add more?</p>
+      {% endif %}
   </section>
 </div>
-
+</div>
+</div>
 {% endblock %}

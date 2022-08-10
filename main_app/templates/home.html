@@ -6,22 +6,29 @@
 {% endblock %}
 
 {% block content %}
-
-<section class="title-container">
-  <div>
-    <h1>R8 OR H8</h1>
-    <h2>Rate or Hate on some bars</h2>
-  </div>
-</section>
-{% if not user.is_authenticated %}
-<section>
-  <form action="{% url 'home' %}" method="post" class="login">
-    <h1>Login</h1>
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="hidden" name="next" value="{{ next }}">
-    <button type="submit">Login</button>
-  </form>
-</section>
+<div class="title-login-container">
+  <section class="title-container">
+    <div class="motto-container">
+      <h1 class"motto">
+        <span class="motto-word motto-word-1">RATE</span>
+        <span class="motto-word motto-word-2">or</span>
+        <span class="motto-word motto-word-3">HATE</span>
+        <span class="motto-word motto-word-4">on</span>
+        <span class="motto-word motto-word-5">some</span>
+        <span class="motto-word motto-word-6">bars</span>
+      </h1>
+    </div>
+  </section>
+  {% if not user.is_authenticated %}
+  <section>
+    <form action="{% url 'home' %}" method="post" class="login">
+      <h1>Login</h1>
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button type="submit">Login</button>
+    </form>
+  </section>
+</div>
 {% endif %}
 {% endblock %}
