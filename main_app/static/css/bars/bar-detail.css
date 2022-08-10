@@ -18,7 +18,7 @@
 }
 
 .bar-details {
-  background: deepskyblue;
+  background: #00bbf9;
   /* position: absolute;
   top: 95px;
   width: 50%; */
@@ -29,18 +29,19 @@
   /* background: gold; */
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .ratings-container {
-  border-right: solid red 10px;
-  background: blue;
-  padding: 10px;
+  background: #9b5de5;
+  padding: 20px;
 }
 
 .bar-beverages {
-  background: hotpink;
+  background: #fee440;
+  padding: 10px;
 }
+
 
 
 h2, h3, p, th, td, a {

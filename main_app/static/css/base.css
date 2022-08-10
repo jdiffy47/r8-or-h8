@@ -40,6 +40,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #9b5de5;
+  flex-wrap: wrap;
 }
 
 ul {
@@ -50,7 +51,7 @@ ul {
   margin: 5px;
 }
 
-nav a{
+nav a {
   text-decoration: none;
   color: #fff;
   font-size: medium;
@@ -67,4 +68,5 @@ li {
   padding: 5px;
   box-shadow: 1px 1px 12px 1px #fee440;
   font-size: x-large;
+  margin-right: 60px;
 }

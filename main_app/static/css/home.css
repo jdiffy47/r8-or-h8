@@ -5,6 +5,34 @@
   text-align: center;
 }
 
+.login {
+  background-image: linear-gradient(to right top, #fee440, #ffa847, #ff6a7b, #ff4bb7, #9b5de5);
+  padding: 4px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+.login-btn {
+  padding: 5px 15px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+
+.martini-img {
+  height: 60px;
+  width: 60%;
+}
+
+.martini-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
 
 .title-container {
   width: 100%;
@@ -12,9 +40,6 @@
 
 .motto-container {
   padding: 10px 15px;
-}
-
-.motto {
 }
 
 .motto-word {

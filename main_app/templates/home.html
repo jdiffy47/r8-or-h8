@@ -20,14 +20,26 @@
     </div>
   </section>
   {% if not user.is_authenticated %}
-  <section>
+  <section class="login">
+    <div class="martini-container">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+    </div>
     <form action="{% url 'home' %}" method="post" class="login">
       <h1>Login</h1>
       {% csrf_token %}
       {{ form.as_p }}
       <input type="hidden" name="next" value="{{ next }}">
-      <button type="submit">Login</button>
+      <button type="submit" class="login-btn">Login</button>
     </form>
+    <div class="martini-container">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+      <img src="{% static 'images/martiniglass.svg' %}" alt="" class="martini-img">
+    </div>
   </section>
 </div>
 {% endif %}

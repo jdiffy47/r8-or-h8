@@ -41,6 +41,6 @@
 .list-title {
   font-size: x-large;
   text-align: center;
-  border: solid 2px #00f5d4;
+  border-bottom: dotted #00f5d4 4px;
   width: 20%;
 }
