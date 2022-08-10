@@ -10,24 +10,21 @@
 {% endblock %}
 
 {% block content %}
-
+<div class="bev-list-container">
 <section>
-  <h1>All Beverages</h1>
+  <h1 class="bev-list-title">All Beverages</h1>
   <img src="" alt="">
 </section>
 
-<section>
+<section class="bev-card-container">
   {% for beverage in beverage_list %}
-  <div>
-    <div></div>
+  <div class="bev-card">
     <a href="{% url 'beverages_detail' beverage.id %}">
-      <div>
-        <h2>{{ beverage.name }}</h2>
-        <h3>{{ beverage.dankness }}</h3>
-      </div>
+      <h2>{{ beverage.name }}</h2>
+      <h3>{{ beverage.dankness }}</h3>
     </a>
   </div>
     {% endfor %}
 </section>
-
+</div>
 {% endblock %}
