@@ -15,6 +15,7 @@ env = environ.Env()
 environ.Env.read_env()
 from pathlib import Path
 import os
+import django_heroku
 
 
 
@@ -133,7 +134,6 @@ STATIC_URL = 'static/'
 LOGIN_URL = 'home'
 
 LOGIN_REDIRECT_URL = 'bars_index'
-
 LOGOUT_REDIRECT_URL = 'home'
 
 # Default primary key field type
@@ -141,5 +141,6 @@ LOGOUT_REDIRECT_URL = 'home'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+django_heroku.settings(locals())
 
 
