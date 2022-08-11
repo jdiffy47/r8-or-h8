@@ -1,14 +1,14 @@
 # **R8 or H8**
 
 
-### about the app
+## Don't you hate when you go to a bar and find out that it sucks? If only you could get some honest reviews from your fellow alcholics. Introducing R8 or H8! Here you can either add a bar of your choice or read about bars that you might potentially go to.
 
 
 ## Getting Started
 
-  → Link to my [Deploy](https://r8orh8.herokuapp.com/)
+  →  Link to my [Deploy](https://r8orh8.herokuapp.com/)
 
-  → Link to my [Trello](https://trello.com/b/DrOh4re6/r8-or-h8)
+  →  Link to my [Trello](https://trello.com/b/DrOh4re6/r8-or-h8)
 
 
 ## Screenshot
