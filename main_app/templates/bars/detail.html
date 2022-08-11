@@ -54,32 +54,6 @@
       {% else %}
         <p>{{ bar.name }} has not been reviewed yet. Be the first!</p>
       {% endif %}
-  {% comment %} <div class="bev-container">
-  <h3>{{ bar.name }}'s Best Beverages</h3>
-    {% if bar.beverages.count %}
-      {% for beverage in bar.beverages.all %}
-          <a href="{% url 'beverages_detail' beverage.id %}">
-            <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
-          </a>
-      {% endfor %}
-    {% else %}
-      <p>{{beverage.name}} has not had any dank beverages added yet</p>
-    {% endif %}
-  <h3>Available Beverages</h3>
-    {% if beverages.count %}
-      {% for beverage in beverages.all %}
-          <a href="{% url 'beverages_detail' beverage.id %}">
-            <p>A {{ beverage.name }} {{ beverage.dankness }}</p>
-          </a>
-            <form action="{% url 'assoc_beverage' bar.id beverage.id %}" method="post">
-            {% csrf_token %}
-            <button type="submit">Give Beverage</button>
-          </form>
-      {% endfor %}
-    {% else %}
-        <p>{{bar.name}} has all the avaiable beverages. Maybe add more?</p>
-    {% endif %}
-  </div> {% endcomment %}
   </div>
 </div>
 {% endblock %}
