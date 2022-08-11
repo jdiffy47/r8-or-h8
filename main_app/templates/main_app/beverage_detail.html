@@ -1,4 +1,4 @@
-{% extends 'base.html' %} 
+{% comment %} {% extends 'base.html' %} 
 {% load static %} 
 
 {% block head %}
@@ -11,9 +11,11 @@
 
 {% block content %}
 <div class="bev-details-container">
-  <h2>{{ beverage.name }}</h2>
-  <p>A {{ beverage.dankness }} beverage</p>
-  <a href="{% url 'beverages_update' beverage.id %}">Edit</a>
-  <a href="{% url 'beverages_delete' beverage.id %}">Delete</a>
+  <h2 class="bev-name">{{ beverage.name }}</h2>
+  <p class="bev-description">A {{ beverage.dankness }} beverage</p>
+  <div class="bev-details-btns">
+    <a href="{% url 'beverages_update' beverage.id %}">Edit</a>
+    <a href="{% url 'beverages_delete' beverage.id %}">Delete</a>
+  </div>
 </div>
-{% endblock %}
+{% endblock %} {% endcomment %}

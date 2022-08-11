@@ -1,20 +1,29 @@
-/* .form-container {
+.add-bar-title {
+  text-align: center;
+  font-size: larger;
+}
+
+
+.form-container {
   display: flex;
   flex-direction: column;
   width: 100%;
+  font-size: larger;
 }
 
 table {
   padding: 0 40px;
   width: 100%;
+  border-spacing: 0 20px;
 }
 
 
-td {
-  max-width: 60%;
+td>* {
+  width: 60%;
+  padding: 2px 4px;
+  font-size: larger;
 }
 
-button {
-  align-self: flex-end;
-  margin-right: 40px;
-} */
+
+.btn {
+}

@@ -6,6 +6,9 @@
   href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
   rel="stylesheet" 
 />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/mcdp.css' %}">
 <script 
   src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
@@ -20,14 +23,13 @@
 
 <div class="detail-pg-container">
   <div class="bar-details">
-    <h1>{{ bar.name }}</h1>
+    <h1 class="bar-name">{{ bar.name }}</h1>
     <h2>{{ bar.description }} Located in {{ bar.area }}</h2>
       <a href="{% url 'bars_update' bar.id %}">Edit</a>
       <a href="{% url 'bars_delete' bar.id %}">Delete</a>
   </div>
   <div class=" ratings-bev-container">
   <div class="ratings-container">
-    <h2>Ratings</h2>
     <h3>Add a Rating</h3>
     <form action="{% url 'add_rating' bar.id %}" method="post">
       {% csrf_token %}
@@ -54,8 +56,7 @@
         <p>{{ bar.name }} has not been reviewed yet. Be the first!</p>
       {% endif %}
   </div>
-  <div class="bev-container">
-    <h2>Best Beverages</h2>
+  {% comment %} <div class="bev-container">
   <h3>{{ bar.name }}'s Best Beverages</h3>
     {% if bar.beverages.count %}
       {% for beverage in bar.beverages.all %}
@@ -80,7 +81,7 @@
     {% else %}
         <p>{{bar.name}} has all the avaiable beverages. Maybe add more?</p>
     {% endif %}
-  </div>
+  </div> {% endcomment %}
   </div>
 </div>
 {% endblock %}

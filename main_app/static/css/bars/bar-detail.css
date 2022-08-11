@@ -9,39 +9,55 @@
   text-align: center;
   color: #fff;
   padding: 10px;
+  border-top: dotted #fee440 10px;
 }
 
 .bar-details > a {
   text-decoration: none;
-  color: #fff;
+  color: darkblue;
   margin: 3px;
+  padding: 10px;
 }
 
 .ratings-container {
   padding: 10px;
   text-align: center;
   flex: 1 1 50%;
+  
 }
 
 
 .ratings-bev-container {
-  background: #9b5de5;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-top: dotted #fee440 10px;
 }
 
 .bev-container {
   padding: 10px;
   flex: 1 1 50%;
   text-align: center;
+  border-left: dotted #fee440 10px;
 }
 
 .bev-container > a {
   text-decoration: none;
 }
 
-h2, h3, p, th, td, a {
-  font-size: large;
+h1, h2, h3, p, th, td, a {
+  font-size: x-large;
 }
+
+
+.rating-title {
+  font-size: x-large;
+}
+
+.bar-name {
+  font-size: 60px;
+  font-weight: 900;
+  font-family: 'Roboto Slab'
+}
+

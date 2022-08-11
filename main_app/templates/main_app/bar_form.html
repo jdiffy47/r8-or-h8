@@ -6,19 +6,18 @@
 {% endblock %}
 
 {% block content %}
-<div>
-  {% if bar %}
-    <h1>Edit {{ bar.name }}</h1>
-  {% else %}
-    <h1>Add a Bar</h1>
-  {% endif %}
+<div class="add-bar-title">
+    {% if bar %}
+      <h1>Edit {{ bar.name }}</h1>
+    {% else %}
+      <h1>Add a Bar</h1>
+    {% endif %}
 </div>
-<form action="" method="post" class="form-container">
-  {% csrf_token %}
-  <table>
-    {{ form.as_table }}
-  </table>
-  <button type="submit">Submit</button>
-</form>
-
+  <form action="" method="post" class="form-container">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn">Submit</button>
+  </form>
 {% endblock %}

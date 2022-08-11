@@ -12,21 +12,21 @@ RATES = (
 )
 
 
-class Beverage(models.Model):
-  name = models.CharField(max_length=50)
-  dankness = models.CharField(max_length=50)
+# class Beverage(models.Model):
+#   name = models.CharField(max_length=50)
+#   dankness = models.CharField(max_length=50)
 
-  def __str__(self):
-    return self.name
+#   def __str__(self):
+#     return self.name
 
-  def get_absolute_url(self):
-    return reverse('beverages_detail', kwargs={'pk': self.id})
+#   def get_absolute_url(self):
+#     return reverse('beverages_detail', kwargs={'pk': self.id})
 
 class Bar(models.Model):
   name = models.CharField(max_length=100)
   area = models.CharField(max_length=100)
   description = models.TextField(max_length=250)
-  beverages = models.ManyToManyField(Beverage)
+  # beverages = models.ManyToManyField(Beverage)
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):

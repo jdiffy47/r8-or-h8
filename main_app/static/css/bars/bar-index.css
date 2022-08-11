@@ -1,20 +1,30 @@
 
+.bar-index {
+  background-image: url(../../)
+}
+
 .card-container {
   padding: 0 30px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .card {
   width: 250px;
   margin: 15px;
-  background-color: #fee440;
+  
 }
 
+
+/* cards need to stretch to be same size */
 .card-content {
   padding: 12px;
   width: 100%;
+  border: solid 4px #00bbf9;
+  background-color: #fee440;
+  border-radius: 20px;
 }
 
 
@@ -39,8 +49,9 @@
 }
 
 .list-title {
-  font-size: x-large;
+  font-size: 60px;
   text-align: center;
-  border-bottom: dotted #00f5d4 4px;
+  border-bottom: dotted #fee440 10px;
   width: 20%;
 }
+
