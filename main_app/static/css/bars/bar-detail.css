@@ -2,14 +2,15 @@
 .detail-pg-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .bar-details {
   background: #00bbf9;
-  text-align: center;
   color: #fff;
-  padding: 10px;
+  /* padding: 10px; */
   border-top: dotted #fee440 10px;
+  border-bottom: dotted #fee440 10px;
 }
 
 .bar-details > a {
@@ -22,19 +23,17 @@
 .ratings-container {
   padding: 10px;
   text-align: center;
-  flex: 1 1 50%;
-  
 }
 
-
+/* 
 .ratings-bev-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   border-top: dotted #fee440 10px;
-}
-
+} */
+/* 
 .bev-container {
   padding: 10px;
   flex: 1 1 50%;
@@ -44,7 +43,7 @@
 
 .bev-container > a {
   text-decoration: none;
-}
+} */
 
 h1, h2, h3, p, th, td, a {
   font-size: x-large;
@@ -58,6 +57,7 @@ h1, h2, h3, p, th, td, a {
 .bar-name {
   font-size: 60px;
   font-weight: 900;
-  font-family: 'Roboto Slab'
+  font-family: 'Roboto Slab';
+  margin: 0;
 }
 

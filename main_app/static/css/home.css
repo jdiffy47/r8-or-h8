@@ -7,12 +7,12 @@
 
 .login {
   background-image: linear-gradient(to right top, #fee440, #ffa847, #ff6a7b, #ff4bb7, #9b5de5);
-  padding: 4px 12px;
+  padding: 20px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
+  /* margin: 50px; */
 }
 
 .login-btn {
