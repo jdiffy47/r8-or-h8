@@ -6,17 +6,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="bar-index">
-  <section class="list-title-container">
-    <h1 class="list-title">Rate or Hate</h1>
-  </section>
-
+<h1 class="list-title">Rate or Hate</h1>
   <section class="card-container">
     {% for bar in bars %}
-    <div class="card">
+    <div class="bar-card">
       <a href="{% url 'bars_detail' bar.id %}">
-        <div class="card-content">
-          <img src="{% static 'images/beertoast.svg' %}" alt="">
+        <div class="card-details">
+          <div class="bar-img-container">
+            <img src="{% static 'images/beertoast.svg' %}" alt="" class="bar-card-img">
+          </div>
           <h2 class="card-title">{{ bar.name }}</h2>
           <p>{{ bar.description }} located in {{ bar.area }}.</p>
         </div>
@@ -24,5 +22,4 @@
     </div>
     {% endfor %}
   </section>
-</div>
 {% endblock %}

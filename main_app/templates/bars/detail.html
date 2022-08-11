@@ -2,10 +2,6 @@
 {% load static %}
 
 {% block head %}
-<link 
-  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
-  rel="stylesheet" 
-/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;600;900&display=swap" rel="stylesheet">
@@ -14,6 +10,10 @@
   src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"
 >
 </script>
+<link 
+  href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css" 
+  rel="stylesheet" 
+/>
 <link rel="stylesheet" type="text/css" href="{% static 'css/bars/bar-detail.css' %}"
 />
 <script defer src="{% static 'js/bar-detail.js' %}"></script>
@@ -29,13 +29,13 @@
       <a href="{% url 'bars_delete' bar.id %}">Delete</a>
   </div>
   <div class="ratings-container">
-    <h3>Add a Rating</h3>
+    <h3 class="add-rating-title">Add a Rating</h3>
     <form action="{% url 'add_rating' bar.id %}" method="post">
       {% csrf_token %}
       {{ rating_form.as_p }}
       <button type="submit">Add Rating</button>
     </form>
-    <h3>Previous Ratings</h3>
+    <h3 class="prev-rating-title">Previous Ratings</h3>
       {% if bar.rating_set.all.count %}
         <table>
           <thead>

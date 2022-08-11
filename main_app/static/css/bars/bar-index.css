@@ -1,24 +1,34 @@
 
-.bar-index {
-  background-image: url(../../)
-}
 
 .card-container {
-  padding: 0 30px;
+  padding: 0 25px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  align-items: center;
+  /* align-items: center; */
 }
 
-.card {
+.bar-card {
   width: 250px;
   margin: 15px;
+
 }
 
+.bar-card > a {
+  text-decoration: none;
+  color: black;
+}
 
-/* cards need to stretch to be same size */
-.card-content {
+/* .bar-card-img {
+  height: 100px;
+  width: 100px;
+} */
+
+.card-title {
+  font-size: large;
+}
+
+.card-details {
   padding: 12px;
   width: 100%;
   border: solid 4px #00bbf9;
@@ -26,8 +36,11 @@
   border-radius: 20px;
 }
 
+.card-details > p {
+  font-size: small;
+}
 
-.card > a {
+/* .card > a {
   text-decoration: none;
   color: black;
 }
@@ -40,17 +53,13 @@
 .card p {
   margin: 5px 0;
   font-size: small;
-}
-
-.list-title-container {
-  display: flex;
-  justify-content: center;
-}
+} */
 
 .list-title {
-  font-size: 60px;
+  font-size: 40px;
   text-align: center;
   border-bottom: dotted #fee440 10px;
+  margin: 10px auto;
   width: 20%;
 }
 

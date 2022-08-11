@@ -1,0 +1,25 @@
+.about-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  font-size: larger;
+}
+
+.ceo-img {
+  height: 200px;
+  width: 200px;
+}
+
+
+.drinks-img {
+  height: 100px;
+  width: 100px;
+} 
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

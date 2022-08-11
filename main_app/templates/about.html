@@ -1,8 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
 
 {% block content %}
+<div class="about-container">
+  <h1>About r8 or h8</h1>
+  <h2>The fear of showing up to a bar and it sucks big time</h2>
+  <div class="ceo-container">
+    <h3>Founder, CEO</h3>
+    <img src="{% static 'images/coco-background.jpg' %}" alt="" class="ceo-img">
+    <h3>"Meow, meow, meow, meow meow!"</h3>
+  </div>
+</div>
+<footer>
+<img src="{% static 'images/drinksonwall.svg' %}" alt="" class="drinks-img">
+<img src="{% static 'images/drinksonwall.svg' %}" alt="" class="drinks-img">
+<img src="{% static 'images/drinksonwall.svg' %}" alt="" class="drinks-img">
+</footer>
+{% comment %} <div class="drinks-container">
 
-<h1>About r8 or h8</h1>
-<h2>The fear of showing up to a bar and it sucks big time</h2>
-
+</div> {% endcomment %}
 {% endblock %}
