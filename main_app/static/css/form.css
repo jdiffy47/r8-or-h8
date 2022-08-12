@@ -9,9 +9,9 @@
 
 
 .form-container {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
+  /* display: flex;
+  flex-direction: column; */
+  width: 100%;
   font-size: 10px;
 }
 
@@ -32,11 +32,25 @@ td>* {
 .add-bar-btn {
   margin: 0 auto;
   padding: 5px 10px;
+  background-color: #9b5de5;
+  color: #fff;
 }
+
+.add-bar-btn:hover {
+  background-color: #fff;
+  color: #9b5de5;
+}
+
 .signup-btn {
-  margin: 0 auto;
   padding: 5px 10px;
 }
 
-.signup-title {
+.add-bar-container {
+  text-align: center;
+}
+
+.sign-up-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
