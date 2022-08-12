@@ -1,7 +1,7 @@
 # **R8 or H8**
 
 
-## Don't you hate when you go to a bar and find out that it sucks? If only you could get some honest reviews from your fellow alcholics. Introducing R8 or H8! Here you can either add a bar of your choice or read about bars that you might potentially go to.
+## Don't you hate when you go to a bar and find out that it sucks? If only you could get some honest reviews from your fellow bar-goers. Introducing R8 or H8! Here you can either add a bar of your choice or read about bars that you might potentially go to.
 
 
 ## Getting Started
