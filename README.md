@@ -13,7 +13,7 @@
 
 ## Screenshot
 
-![landing page](https://i.imgur.com/NFa3Bqr.jpg)
+![landing page](https://i.imgur.com/AzECUSO.jpg)
 
 ## Technology Used
 
